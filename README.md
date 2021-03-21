@@ -4,7 +4,7 @@
 
 ### 2. Every word started with "#" creates a hashTag
 
-### 3. Note list can be filtered by hashTag
+### 3. Notes list can be filtered by hashTag
 
 ### 4. You can delete hashTags in the edit mode
 
@@ -14,4 +14,4 @@
 
 ### 7. Notes can be deleted from the list
 
-### 8. Note list is stored and parsed from the local storage
+### 8. List of notes is stored in the local storage and is parsed from it.
