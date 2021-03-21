@@ -1,4 +1,5 @@
 import React from "react";
+import { Switch, Route } from "react-router-dom";
 import Preload from "./preload";
 import Popup from "./popup";
 import Input from "./input";
@@ -35,13 +36,19 @@ const NoteContainer = () => {
   };
   return (
     <>
-      <Popup {...popupProps} />
       <div className="noteContainer">
         <Input {...inputProps} />
-        <Preload list={notesList}>
-          <InputFilter onInput={handleInputFilter} />
-          <Note {...notesProps} />
-        </Preload>
+        <Switch>
+          <Route exact path="/">
+            <Preload list={notesList}>
+              <InputFilter onInput={handleInputFilter} />
+              <Note {...notesProps} />
+            </Preload>
+          </Route>
+          <Route path="/edit">
+            <Popup {...popupProps} />
+          </Route>
+        </Switch>
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-
+import { useHistory } from "react-router-dom";
 const SetState = () => {
+  const { push } = useHistory();
   const [note, setNote] = useState({
     newNote: "",
     edit: "",
@@ -83,6 +84,7 @@ const SetState = () => {
       isOpened: false,
     }));
     saveNote(newNotesList);
+    push("/");
   };
 
   const handleDelete = (id) => {

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Note = ({ notesList, handleEdit, handleDelete }) => {
   return (
@@ -10,9 +11,11 @@ const Note = ({ notesList, handleEdit, handleDelete }) => {
               <span className="note__label">Note:</span> {note}
             </div>
             <div className="note__manage">
-              <button className="editNote" onClick={() => handleEdit(id)}>
-                Edit
-              </button>
+              <Link to="/edit">
+                <button className="editNote" onClick={() => handleEdit(id)}>
+                  Edit
+                </button>
+              </Link>
               <button className="deleteNote" onClick={() => handleDelete(id)}>
                 Delete
               </button>

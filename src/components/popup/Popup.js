@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaTimes } from "react-icons/fa";
 import PopupNote from "./popup-note";
 
@@ -23,7 +24,9 @@ const Popup = (props) => {
   };
   return (
     <div className="popup" style={{ display: isOpened ? "block" : "none" }}>
-      <FaTimes size="2rem" style={closeIconStyle} onClick={closePopUp} />
+      <Link to="/">
+        <FaTimes size="2rem" style={closeIconStyle} onClick={closePopUp} />
+      </Link>
       <PopupNote {...popupNoteProps} />
       <div className="edit">
         <input
