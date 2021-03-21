@@ -1,0 +1,65 @@
+@import "./helpers";
+
+.popup {
+  @include boxPars(100%, 100vh, 3rem, 1rem);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(13, 13, 13, 0.95);
+}
+.popup__heading {
+  text-align: center;
+  margin: 0 0 3rem 0;
+}
+.edit {
+  width: #{"min(600px, 100%)"};
+  margin: 0 auto;
+  &__field {
+    @include boxPars(100%, 40px, 0.5rem, 1rem);
+    border: none;
+    margin: 0 0 1rem 0;
+  }
+  &__hashTagList {
+    margin: 0 0 4rem 0;
+  }
+}
+.submitButton__btn {
+  display: block;
+  padding: 1rem 2.5rem;
+  width: max-content;
+  margin: 0 auto;
+}
+.hashTag__label {
+  color: $primaryYellow;
+  margin-bottom: 0.6rem;
+}
+.hashTagItem {
+  @include flexStyles(row, flex-start, center);
+  width: #{"min(600px, 100%)"};
+  flex-flow: row wrap;
+  color: $primaryGrey;
+}
+.hashTag-delete {
+  margin-left: auto;
+  padding: 4px;
+  color: $primaryRed;
+  cursor: pointer;
+  transition: color 0.3s;
+  &:hover {
+    color: $hoverRed;
+  }
+}
+
+.heading__item {
+  padding: 0 4px;
+  margin: 1px;
+  color: $primaryWhite;
+  &--color {
+    background: $primaryYellow;
+  }
+}
+.popup__heading span:first-child {
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  color: $primaryGrey;
+}

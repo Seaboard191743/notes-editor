@@ -1,0 +1,10 @@
+@import "./helpers";
+@import "./preload";
+@import "./add-note";
+@import "./edit-note";
+
+.container {
+  width: #{"min(calc(700px + 2rem), 100%)"};
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}

@@ -1,0 +1,73 @@
+@import "./helpers";
+
+.noteContainer {
+  display: grid;
+}
+.inputField {
+  @include flexStyles(row, flex-start, ihnerit);
+  margin-bottom: 1rem;
+}
+.noteInput {
+  @include inputFields(600px, 0.8rem, 2px);
+  &::placeholder {
+    font-size: clamp(0.8rem, 0.9rem, 1.8vw);
+    color: $primaryGrey;
+  }
+}
+.submitButton {
+  @include btnStyles(100px, 0, $primaryBlue);
+  &:hover {
+    background: $hoverBlue;
+  }
+}
+.inputFilter {
+  @include inputFields(300px, 0.5rem, 1px);
+  margin: 0 0 2rem 0;
+}
+.inputFilter::placeholder {
+  font-size: clamp(0.8rem, 0.9rem, 1.8vw);
+  color: rgba(200, 200, 200, 1);
+}
+.note {
+  width: #{"min(700px, 100%)"};
+  place-self: center;
+  @include flexStyles(row, flex-start, center);
+  flex-flow: row wrap;
+  border-bottom: 1px solid $lightGrey;
+  &__outer {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+  &__value {
+    width: #{"min(400px, 100%)"};
+    padding: 1rem;
+    color: rgba(33, 33, 33, 1);
+    font-size: 1.2rem;
+  }
+  &__label {
+    margin-right: 0.5rem;
+    color: rgba(200, 200, 200, 1);
+    font-size: 1rem;
+  }
+  &__manage {
+    margin-left: auto;
+  }
+}
+.deleteNote {
+  @include btnStyles(60px, 2px, $primaryRed);
+  &:hover {
+    background: $hoverRed;
+  }
+  &:focus {
+    background: $hoverRed;
+  }
+}
+.editNote {
+  @include btnStyles(60px, 2px, $primaryYellow);
+  &:hover {
+    background: $hoverYellow;
+  }
+  &:focus {
+    background: $hoverYellow;
+  }
+}

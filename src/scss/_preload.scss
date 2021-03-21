@@ -1,0 +1,54 @@
+@import "./helpers";
+
+.preload {
+  @include boxPars(#{"min(700px, 100%)"}, 50vh, 1rem, 1rem);
+  @include flexStyles(column, center, center);
+  margin: 0 auto;
+  &__headings {
+    text-align: center;
+    color: $primaryGrey;
+    margin: 0 0 2rem 0;
+  }
+  &__title {
+    font-size: clamp(1.7rem, 2.3rem, 5vw);
+  }
+  &__subtitle {
+    font-size: clamp(1.3rem, 1.8em, 4vw);
+  }
+}
+.preload-visuals {
+  display: flex;
+}
+.preload-visuals__items {
+  width: 15px;
+  height: 15px;
+  margin: 0 4px;
+  border-radius: 50%;
+  background: $lightTurquoise;
+  transition: transform 2s;
+}
+.first {
+  animation: firstItem 2s infinite;
+}
+.second {
+  animation: secondItem 2s infinite;
+}
+.third {
+  animation: thirdItem 2s infinite;
+}
+
+@keyframes firstItem {
+  50% {
+    @include preloadAnimation(23px, $primaryTurquoise);
+  }
+}
+@keyframes secondItem {
+  50% {
+    background: $primaryTurquoise;
+  }
+}
+@keyframes thirdItem {
+  50% {
+    @include preloadAnimation(-23px, $primaryTurquoise);
+  }
+}

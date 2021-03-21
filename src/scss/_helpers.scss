@@ -1,0 +1,44 @@
+$primaryWhite: rgba(255, 255, 255, 1);
+$lightGrey: rgba(224, 224, 224, 1);
+$primaryGrey: rgba(158, 158, 158, 1);
+$primaryRed: rgba(244, 67, 54, 1);
+$hoverRed: rgba(221, 57, 57, 1);
+$primaryYellow: rgba(255, 167, 38, 1);
+$hoverYellow: rgba(251, 140, 0, 1);
+$primaryBlue: rgba(25, 118, 210, 1);
+$hoverBlue: rgba(21, 101, 192, 1);
+$primaryTurquoise: rgba(29, 233, 182, 1);
+$lightTurquoise: rgba(167, 255, 235, 1);
+
+@mixin inputFields($width, $paddY, $border) {
+  width: #{"min(#{$width}, 100%)"};
+  padding: $paddY 1rem;
+  border: none;
+  border-bottom: $border solid $lightGrey;
+}
+@mixin flexStyles($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+@mixin btnStyles($btnWidth, $btnMargin, $btnBg) {
+  padding: 0.6rem;
+  margin: $btnMargin;
+  width: $btnWidth;
+  border: none;
+  background: $btnBg;
+  color: rgba(255, 255, 255, 1);
+  transition: background 0.3s;
+  cursor: pointer;
+}
+@mixin boxPars($w, $h, $pY, $pX) {
+  width: $w;
+  height: $h;
+  padding: $pY $pX;
+}
+@mixin preloadAnimation($coordX, $bg) {
+  position: relative;
+  transform: translateX($coordX);
+  background: $bg;
+}
