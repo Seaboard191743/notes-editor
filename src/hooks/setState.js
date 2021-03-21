@@ -35,6 +35,7 @@ const SetState = () => {
     ];
     return { hashTags, newNote, newNotesList };
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!note.newNote) {
@@ -42,7 +43,6 @@ const SetState = () => {
       return;
     }
     const { newNotesList } = listUpdates(note.newNote);
-
     setNote((prev) => ({
       ...prev,
       newNote: "",
@@ -51,14 +51,13 @@ const SetState = () => {
     }));
     saveNote(newNotesList);
   };
+
   const handleInputFilter = (e) => {
     const { value } = e.target;
-    // const valueArr = value.split(" ");
     const filteredNotes = note.notesList.filter((note) =>
       note.hashTag.includes(value)
     );
     setNote((prev) => ({ ...prev, filteredNotes }));
-    console.log(filteredNotes);
   };
 
   useEffect(() => {
@@ -85,11 +84,13 @@ const SetState = () => {
     }));
     saveNote(newNotesList);
   };
+
   const handleDelete = (id) => {
     const newNotesList = note.notesList.filter((note) => note.id !== id);
     setNote((prev) => ({ ...prev, notesList: newNotesList }));
     saveNote(newNotesList);
   };
+
   const handleEdit = (id) => {
     setNote((prev) => ({
       ...prev,
@@ -97,6 +98,7 @@ const SetState = () => {
       editNote: prev.notesList.find((note) => note.id === id),
     }));
   };
+
   const deleteHashTag = (tag) => {
     const newHashTags = note.editNote.hashTag.filter((item) => item !== tag);
     const newNotesList = note.notesList.map((item) => {
@@ -114,6 +116,7 @@ const SetState = () => {
     }));
     saveNote(newNotesList);
   };
+
   const closePopUp = () => {
     setNote((prev) => ({ ...prev, isOpened: false }));
   };
