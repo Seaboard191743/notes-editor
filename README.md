@@ -15,3 +15,5 @@
 ### 7. Notes can be deleted from the list
 
 ### 8. List of notes is stored in the local storage and is parsed from it.
+_______________
+Deploy: https://note-seaboard.netlify.app/
