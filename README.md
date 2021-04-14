@@ -16,4 +16,4 @@
 
 ### 8. List of notes is stored in the local storage and is parsed from it.
 _______________
-Deploy: https://note-seaboard.netlify.app/
+### Deploy: https://note-seaboard.netlify.app/
